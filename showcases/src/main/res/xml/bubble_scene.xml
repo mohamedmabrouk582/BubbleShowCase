@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:motion="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="urn:oasis:names:tc:xliff:document:1.2"
+>
+<Transition motion:duration="250"
+            motion:constraintSetStart="@+id/start"
+            motion:constraintSetEnd="@+id/end"
+            >
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+                android:id="@+id/imageViewShowCase"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/rounded_rectangle"
+                motion:layout_constraintBottom_toTopOf="parent"
+                android:layout_marginBottom="36dp"
+                motion:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"/>
+
+
+        <Constraint
+                android:rotation="0"
+                android:id="@+id/textViewShowCaseTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:breakStrategy="simple"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="itjgitjgitjitg"
+                motion:layout_constraintStart_toEndOf="@+id/imageViewShowCase"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                motion:layout_constraintTop_toTopOf="@+id/imageViewShowCase"
+                android:layout_marginEnd="8dp"
+                motion:layout_constraintEnd_toStartOf="@+id/imageViewShowCaseClose"
+                android:layout_marginRight="8dp"/>
+
+        <Constraint
+                android:rotation="0"
+                android:id="@+id/textViewShowCaseText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:breakStrategy="simple"
+                android:textColor="@color/black"
+                android:textSize="14sp" tools:text="uhuuhu"
+                motion:layout_constraintStart_toStartOf="@+id/textViewShowCaseTitle"
+                motion:layout_constraintEnd_toEndOf="@+id/textViewShowCaseTitle"
+                android:layout_marginTop="8dp"
+                motion:layout_constraintTop_toBottomOf="@+id/textViewShowCaseTitle"/>
+
+
+        <Constraint
+                android:id="@+id/imageViewShowCaseClose"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="11dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_close"
+                tools:src="@tools:sample/backgrounds/scenic"
+                motion:layout_constraintBottom_toTopOf="parent"
+                tools:layout_editor_absoluteX="343dp" android:layout_marginBottom="32dp"/>
+
+
+        <Constraint
+                android:textSize="12sp"
+                android:background="@android:color/transparent"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:id="@+id/buttonShowCaseNext"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintStart_toEndOf="parent" android:layout_marginBottom="4dp"
+                android:layout_marginStart="24dp"
+        />
+         <Constraint
+                android:textSize="12sp"
+                android:background="@android:color/transparent"
+                android:text="Skip All "
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:id="@+id/skipTxt"
+                android:layout_marginBottom="16dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="16dp"
+                motion:layout_constraintTop_toBottomOf="@+id/textViewShowCaseText"
+                motion:layout_constraintVertical_bias="0.687"
+                android:layout_marginEnd="44dp"
+                motion:layout_constraintEnd_toStartOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+                android:visibility="gone"
+                android:id="@+id/imageViewShowCase"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/rounded_rectangle"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent"/>
+
+
+        <Constraint
+                android:visibility="gone"
+                android:rotation="0"
+                android:id="@+id/textViewShowCaseTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:breakStrategy="simple"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="itjgitjgitjitg"
+                motion:layout_constraintStart_toEndOf="@+id/imageViewShowCase"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                motion:layout_constraintTop_toTopOf="@+id/imageViewShowCase"
+                android:layout_marginEnd="8dp"
+                motion:layout_constraintEnd_toStartOf="@+id/imageViewShowCaseClose"
+                android:layout_marginRight="8dp"/>
+
+        <Constraint
+                android:visibility="gone"
+                android:rotation="0"
+                android:id="@+id/textViewShowCaseText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:breakStrategy="simple"
+                android:textColor="@color/black"
+                android:textSize="14sp" tools:text="uhuuhu"
+                motion:layout_constraintStart_toStartOf="@+id/textViewShowCaseTitle"
+                motion:layout_constraintEnd_toEndOf="@+id/textViewShowCaseTitle"
+                android:layout_marginTop="8dp"
+                motion:layout_constraintTop_toBottomOf="@+id/textViewShowCaseTitle"/>
+
+
+
+        <Constraint
+                android:id="@+id/imageViewShowCaseClose"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="11dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_close"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toTopOf="parent"/>
+
+
+        <Constraint
+                android:visibility="gone"
+                android:textSize="12sp"
+                android:background="@android:color/transparent"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:id="@+id/buttonShowCaseNext"
+                motion:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                motion:layout_constraintTop_toBottomOf="@+id/textViewShowCaseText"/>
+        <Constraint
+                android:visibility="gone"
+                android:textSize="12sp"
+                android:background="@android:color/transparent"
+                android:text="Skip All "
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:id="@+id/skipTxt"
+                android:layout_marginBottom="16dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="10dp"
+                motion:layout_constraintEnd_toStartOf="@+id/buttonShowCaseNext"
+                android:layout_marginTop="16dp"
+                motion:layout_constraintTop_toBottomOf="@+id/textViewShowCaseText"/>
+    </ConstraintSet>
+</Transition>
+
+</MotionScene>

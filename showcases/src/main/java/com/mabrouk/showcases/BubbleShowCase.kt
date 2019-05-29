@@ -179,6 +179,7 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
         return backgroundLayout
     }
 
+    public fun getTargetView():View? = mTargetView?.get()
     private fun setBackgroundDimListener(backgroundDimLayout: RelativeLayout?){
         backgroundDimLayout?.setOnClickListener { mBubbleShowCaseListener?.onBackgroundDimClick(this) }
     }

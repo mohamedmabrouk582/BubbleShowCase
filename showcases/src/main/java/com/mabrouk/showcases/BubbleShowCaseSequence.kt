@@ -21,9 +21,9 @@ class BubbleShowCaseSequence{
         return this
     }
 
-    fun show() = show(0)
+    fun show(overLayColor:Int = R.color.transparent_grey) = showing(0,overLayColor)
 
-    private fun show(position: Int){
+     fun showing(position: Int,overLayColor:Int = R.color.transparent_grey){
         if(position >= mBubbleShowCaseBuilderList.size)
             return
 
@@ -43,9 +43,9 @@ class BubbleShowCaseSequence{
         }
         mBubbleShowCaseBuilderList[position].sequenceListener(object : SequenceShowCaseListener{
             override fun onDismiss() {
-                show(position + 1)
+                showing(position + 1,overLayColor)
             }
-        }).show()
+        }).show(overLayColor)
     }
 
 }

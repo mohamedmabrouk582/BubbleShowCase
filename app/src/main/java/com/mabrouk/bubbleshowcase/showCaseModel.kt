@@ -9,4 +9,4 @@ import androidx.appcompat.widget.DialogTitle
 * BubbleShowCase
 */
 
-public data class showCaseModel (val view:View,val title: String,val content:String,val key:String)
+public data class showCaseModel (val view:View,val title: String,val content:String,val key:String,val backGround:Int)

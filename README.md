@@ -15,6 +15,9 @@ BubbleShowCase is an elegant and simple framework developed in Kotlin (usable al
 
 Add the library into your proyect is really easy, you just need to add this line in dependencies block in your app Gradle:
 ```groovy
+               maven { url 'https://jitpack.io' }
+	       
+	       
 	        implementation 'com.github.mohamedmabrouk582:BubbleShowCase:LATEST_VERSION'
 ```
 **NOTE:** You can check the LATEST_VERSION in the version badge at the top of this file.

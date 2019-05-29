@@ -12,7 +12,8 @@ Add the library into your proyect is really easy, you just need to add this line
 **NOTE:** You can check the LATEST_VERSION in the version badge at the top of this file.
 
 #simple
-BubbleShowCaseBuilder(this)
+               
+	        BubbleShowCaseBuilder(this)
                 .title(it.title) 
                 .description(it.content)
                 .titleColor(Color.parseColor("#000000"))

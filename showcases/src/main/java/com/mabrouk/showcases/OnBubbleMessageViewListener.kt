@@ -17,4 +17,6 @@ interface OnBubbleMessageViewListener {
     fun onBubbleClick()
 
     fun onNextClick()
+
+    fun onSkipClick()
 }

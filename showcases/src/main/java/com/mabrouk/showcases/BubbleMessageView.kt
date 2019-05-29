@@ -198,6 +198,7 @@ class BubbleMessageView : ConstraintLayout {
         imageViewClose?.setOnClickListener {builder.mListener?.onCloseActionImageClick()}
         itemView?.setOnClickListener {builder.mListener?.onBubbleClick()}
         nextButton?.setOnClickListener { builder.mListener?.onNextClick()}
+        skipButton?.setOnClickListener { builder.mListener?.onSkipClick() }
     }
 
 

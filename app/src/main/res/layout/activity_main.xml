@@ -30,6 +30,7 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="216dp"
             app:layout_constraintBottom_toTopOf="@+id/button3" app:layout_constraintHorizontal_bias="0.0"/>
     <Button
+            android:background="@color/blue_default"
             android:text="Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

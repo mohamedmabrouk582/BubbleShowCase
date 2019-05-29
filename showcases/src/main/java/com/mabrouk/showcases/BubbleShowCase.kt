@@ -214,6 +214,10 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
                 .skipTextFont(skipTextFont)
                 .skipTextSize(skipTextSize)
                 .listener(object : OnBubbleMessageViewListener {
+                    override fun onSkipClick() {
+                       finishSequence()
+                    }
+
                     override fun onNextClick() {
                         onCloseActionImageClick()
                     }

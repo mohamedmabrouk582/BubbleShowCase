@@ -1,7 +1,7 @@
 # BubbleShowCase
 BubbleShowCase is an elegant and simple framework developed in Kotlin (usable also in Java) that let you to use informative bubbles to help your users pointing out different features of your application or in your App onboarding. The basic use of the framework consists on a target element passed as input which will be highlighted over a translucent background and pointed out by a customizable bubble.
 
-<img src="snapShot/demo.mp4" alt="GIF" height="700"/>
+<img src="snapShot/demo.gif" alt="GIF" height="700"/>
 
 ## Getting started
 

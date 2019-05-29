@@ -24,4 +24,9 @@ interface BubbleShowCaseListener {
      * It is called when the user clicks on the bubble
      */
     fun onBubbleClick(bubbleShowCase: BubbleShowCase)
+
+    /**
+     * It is called when be last item at Sequence
+     */
+    fun onLastItem(bubbleShowCase: BubbleShowCase){}
 }

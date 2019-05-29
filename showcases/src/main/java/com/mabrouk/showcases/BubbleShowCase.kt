@@ -145,6 +145,7 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
     fun dismiss() {
         if (backgroundDimLayout != null && isLastOfSequence) {
             //Remove background dim layout if the BubbleShowCase is the last of the sequence
+            mBubbleShowCaseListener?.onLastItem(this)
             finishSequence()
         } else {
             //Remove all the views created over the background dim layout waiting for the next BubbleShowCsse in the sequence
@@ -160,7 +161,8 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
     }
 
     private fun notifyDismissToSequenceListener(){
-        mSequenceListener?.let { mSequenceListener.onDismiss() }
+        mSequenceListener?.let {
+            mSequenceListener.onDismiss() }
     }
 
     private fun getViewRoot(activity: Activity): ViewGroup {

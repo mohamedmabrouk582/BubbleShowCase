@@ -52,6 +52,7 @@ class BubbleShowCaseBuilder{
     internal var skipDrawable:Drawable?=null
     internal var skipResourceId:Int?=null
     internal var showSkip:Boolean?=null
+    internal var scrollHere:Boolean=false
 
 
 
@@ -370,6 +371,11 @@ class BubbleShowCaseBuilder{
 
     fun skipTextColorResourceId(colorResId: Int): BubbleShowCaseBuilder {
         skipTextColor = ContextCompat.getColor(mActivity?.get()!!, colorResId)
+        return this
+    }
+
+    fun scroolHere(scroll:Boolean) : BubbleShowCaseBuilder{
+        this.scrollHere=scroll
         return this
     }
 

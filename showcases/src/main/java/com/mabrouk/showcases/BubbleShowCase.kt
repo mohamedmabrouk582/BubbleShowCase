@@ -89,6 +89,7 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
     private val skipDrawable:Drawable?=builder.skipDrawable
     private val skipResourceId:Int?=builder.skipResourceId
     private val showSkip:Boolean?=builder.showSkip
+    private val scrollHere:Boolean=builder.scrollHere
 
     //Sequence params
     private val mSequenceListener: SequenceShowCaseListener?  = builder.mSequenceShowCaseListener
@@ -216,6 +217,7 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
                 .skipTextColor(skipTextColor)
                 .skipTextFont(skipTextFont)
                 .skipTextSize(skipTextSize)
+                .scrollHere(scrollHere)
                 .listener(object : OnBubbleMessageViewListener {
                     override fun onSkipClick() {
                        finishSequence()
@@ -231,7 +233,7 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
 
                     override fun onCloseActionImageClick() {
                         dismiss()
-                        mBubbleShowCaseListener?.onCloseActionImageClick(this@BubbleShowCase)
+                        mBubbleShowCaseListener?.onCloseActionImageClick(this@BubbleShowCase,scrollHere)
                     }
                 })
     }

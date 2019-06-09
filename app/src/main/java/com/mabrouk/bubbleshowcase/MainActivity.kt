@@ -1,13 +1,11 @@
 package com.mabrouk.bubbleshowcase
 
+import android.app.Activity
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.mabrouk.showcases.BubbleShowCase
-import com.mabrouk.showcases.BubbleShowCaseBuilder
-import com.mabrouk.showcases.BubbleShowCaseListener
-import com.mabrouk.showcases.BubbleShowCaseSequence
+import com.mabrouk.showcases.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,18 +14,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var models:MutableList<showCaseModel> = ArrayList()
-        models.add(showCaseModel(textView,"text View ","ducucducud","textViewone",R.color.colorGreen))
-        models.add(showCaseModel(button,"button one ","ducucducud","buttonOne",R.color.colorOrange))
-        models.add(showCaseModel(textView2,"text View 2 ","ducucducud","textView2",R.color.colorRed))
-        models.add(showCaseModel(button3,"Button 3 ","ducucducud","button3",R.color.colorPink))
-        models.add(showCaseModel(button2,"Button 2 ","ducucducud","button2",R.color.colorBlueGray))
-        showCases(models,object : BubbleShowCaseListener{
+        var models:MutableList<ShowCaseModel> = ArrayList()
+        models.add(ShowCaseModel(textView,"text View ","ducucducud","textViewone",R.color.colorGreen,R.drawable.next_btn))
+        models.add(ShowCaseModel(button,"button one ","ducucducud","buttonOne",R.color.colorOrange,R.drawable.next_btn))
+        models.add(ShowCaseModel(textView2,"text View 2 ","ducucducud","textView2",R.color.colorRed,R.drawable.next_btn,scrollHere = true))
+        models.add(ShowCaseModel(button3,"Button 3 ","ducucducud","button3",R.color.colorPink,R.drawable.next_btn))
+        models.add(ShowCaseModel(button2,"Button 2 ","ducucducud","button2",R.color.colorBlueGray,R.drawable.next_btn))
+       ShowCaseUtil.showCases(this,models,object : BubbleShowCaseListener{
             override fun onTargetClick(bubbleShowCase: BubbleShowCase) {
 
             }
 
-            override fun onCloseActionImageClick(bubbleShowCase: BubbleShowCase) {
+            override fun onCloseActionImageClick(bubbleShowCase: BubbleShowCase,scroll:Boolean) {
             }
 
             override fun onBackgroundDimClick(bubbleShowCase: BubbleShowCase) {
@@ -37,23 +35,23 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onLastItem(bubbleShowCase: BubbleShowCase) {
-                Toast.makeText(this@MainActivity,"Last Item${bubbleShowCase.getTargetView()?.bottom} ",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity,"Last Item${bubbleShowCase.getTargetView()?.bottom}  ",Toast.LENGTH_SHORT).show()
             }
 
         })
     }
 
-    fun showCases(models:List<showCaseModel>,listener:BubbleShowCaseListener){
+    fun showCases(activity: Activity,models:List<ShowCaseModel>,listener:BubbleShowCaseListener){
         var data:MutableList<BubbleShowCaseBuilder> = ArrayList()
         models.forEach {
-            data.add(BubbleShowCaseBuilder(this)
+            data.add(BubbleShowCaseBuilder(activity)
                 .title(it.title)
                 .description(it.content)
-                .titleColor(Color.parseColor("#000000"))
-                .contentColor(Color.parseColor("#00574B"))
+                .titleColor(it.textColor)
+                .contentColor(it.contentColor)
                 .backgroundColorResourceId(it.backGround)
-                .titleTextSize(17)
-                .descriptionTextSize(18)
+                .titleTextSize(it.titleSize)
+                .descriptionTextSize(it.contentSize)
                 .showNextButton(true)
                 .nextButtonText("Next")
                 .nextButtonColorResourceId(R.color.white)

@@ -13,7 +13,7 @@ interface BubbleShowCaseListener {
     /**
      * It is called when the user clicks on the close icon
      */
-    fun onCloseActionImageClick(bubbleShowCase: BubbleShowCase)
+    fun onCloseActionImageClick(bubbleShowCase: BubbleShowCase,scroll: Boolean)
 
     /**
      * It is called when the user clicks on the background dim

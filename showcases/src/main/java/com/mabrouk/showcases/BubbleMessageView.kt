@@ -355,6 +355,12 @@ class BubbleMessageView : ConstraintLayout {
         var skipDrawable:Drawable?=null
         var skipResourceId:Int?=null
         var showSkip:Boolean?=null
+        var scrollHere:Boolean=false
+
+        fun scrollHere(scroll:Boolean) : Builder{
+            this.scrollHere=scroll
+            return this
+        }
 
         fun skipDrawable(drawable: Drawable?):Builder{
             skipDrawable=drawable

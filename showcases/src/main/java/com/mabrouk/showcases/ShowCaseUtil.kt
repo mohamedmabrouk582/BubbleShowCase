@@ -45,6 +45,8 @@ class ShowCaseUtil {
                     .contentColor(it.contentColor)
                     .backgroundColorResourceId(it.backGround)
                     .titleTextSize(it.titleSize)
+                    .titleFont(it.titleFont)
+                    .contentFont(it.contentFont)
                     .descriptionTextSize(it.contentSize)
                     .showNextButton(true)
                     .nextButtonText("Next")

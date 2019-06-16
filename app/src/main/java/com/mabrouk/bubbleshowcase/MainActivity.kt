@@ -2,6 +2,7 @@ package com.mabrouk.bubbleshowcase
 
 import android.app.Activity
 import android.graphics.Color
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -14,13 +15,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val titleFont:Typeface=Typeface.createFromAsset(
+            assets,
+            "fonts/opensans_extrabold.ttf"
+        )
+
+        val contentFont:Typeface=Typeface.createFromAsset(
+            assets,
+            "fonts/opensans_regular.ttf"
+        )
         var models:MutableList<ShowCaseModel> = ArrayList()
-        models.add(ShowCaseModel(textView,"text View ","ducucducud","textViewone",R.color.colorGreen,R.drawable.next_btn,textColor = R.color.white))
-        models.add(ShowCaseModel(button,"button one ","ducucducud","buttonOne",R.color.colorOrange,R.drawable.next_btn))
-        models.add(ShowCaseModel(textView2,"text View 2 ","ducucducud","textView2",R.color.colorRed,R.drawable.next_btn,scrollHere = true))
-        models.add(ShowCaseModel(button3,"Button 3 ","ducucducud","button3",R.color.colorPink,R.drawable.next_btn))
-        models.add(ShowCaseModel(button2,"Button 2 ","ducucducud","button2",R.color.colorBlueGray,R.drawable.next_btn))
-       ShowCaseUtil.showCases(this,models,object : BubbleShowCaseListener{
+        models.add(ShowCaseModel(textView,"text View ","ducucducud","textViewone",R.color.colorGreen,R.drawable.next_btn,textColor = R.color.white,titleFont = titleFont,contentFont = contentFont))
+        models.add(ShowCaseModel(button,"button one ","ducucducud","buttonOne",R.color.colorOrange,R.drawable.next_btn,titleFont = titleFont,contentFont = contentFont))
+        models.add(ShowCaseModel(textView2,"text View 2 ","ducucducud","textView2",R.color.colorRed,R.drawable.next_btn,titleFont = titleFont,contentFont = contentFont,scrollHere = true))
+        models.add(ShowCaseModel(button3,"Button 3 ","ducucducud","button3",R.color.colorPink,R.drawable.next_btn,titleFont = titleFont,contentFont = contentFont))
+        models.add(ShowCaseModel(button2,"Button 2 ","ducucducud","button2",R.color.colorBlueGray,R.drawable.next_btn,titleFont = titleFont,contentFont = contentFont))
+        ShowCaseUtil.showCases(this,models,object : BubbleShowCaseListener{
             override fun onTargetClick(bubbleShowCase: BubbleShowCase) {
 
             }
@@ -51,6 +61,16 @@ class MainActivity : AppCompatActivity() {
                 .contentColor(it.contentColor)
                 .backgroundColorResourceId(it.backGround)
                 .titleTextSize(it.titleSize)
+                .titleFont(
+                    Typeface.createFromAsset(
+                        assets,
+                        "fonts/opensans_extrabold.ttf"
+                    ))
+                .contentFont(
+                    Typeface.createFromAsset(
+                        assets,
+                        "fonts/opensans_regular.ttf.ttf"
+                    ))
                 .descriptionTextSize(it.contentSize)
                 .showNextButton(true)
                 .nextButtonText("Next")

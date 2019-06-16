@@ -178,15 +178,19 @@ class BubbleMessageView : ConstraintLayout {
             textViewSubtitle?.text = builder.mSubtitle
         }
         builder.mTextColor?.let {
+            textViewTitle?.visibility = View.VISIBLE
             textViewTitle?.setTextColor(builder.mTextColor!!)
         }
         builder.mContentColor?.let {
+            textViewSubtitle?.visibility = View.VISIBLE
             textViewSubtitle?.setTextColor(builder.mContentColor!!)
         }
         builder.mTitleTextSize?.let {
+            textViewTitle?.visibility = View.VISIBLE
             textViewTitle?.setTextSize(TypedValue.COMPLEX_UNIT_SP, builder.mTitleTextSize!!.toFloat())
         }
         builder.mSubtitleTextSize?.let {
+            textViewSubtitle?.visibility = View.VISIBLE
             textViewSubtitle?.setTextSize(TypedValue.COMPLEX_UNIT_SP, builder.mSubtitleTextSize!!.toFloat())
         }
         builder.mBackgroundColor?.let { mBackgroundColor = builder.mBackgroundColor!! }

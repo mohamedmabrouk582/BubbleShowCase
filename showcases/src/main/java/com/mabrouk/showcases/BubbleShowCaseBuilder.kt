@@ -349,6 +349,17 @@ class BubbleShowCaseBuilder{
         return this
     }
 
+    fun titleFont(font: Typeface?):BubbleShowCaseBuilder{
+        mTitleFont=font
+        return this
+    }
+
+
+    fun contentFont(font: Typeface?):BubbleShowCaseBuilder{
+        mSubTitleFont=font
+        return this
+    }
+
     fun skipTextFont(font: Typeface?):BubbleShowCaseBuilder{
         skipTextFont=font
         return this

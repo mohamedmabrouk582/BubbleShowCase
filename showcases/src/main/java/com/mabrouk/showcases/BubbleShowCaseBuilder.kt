@@ -53,6 +53,7 @@ class BubbleShowCaseBuilder{
     internal var skipResourceId:Int?=null
     internal var showSkip:Boolean?=null
     internal var scrollHere:Boolean=false
+    internal var allowAnimation:Boolean=true
 
 
 
@@ -387,6 +388,11 @@ class BubbleShowCaseBuilder{
 
     fun scroolHere(scroll:Boolean) : BubbleShowCaseBuilder{
         this.scrollHere=scroll
+        return this
+    }
+
+    fun allowTargetAnimation(allow:Boolean):BubbleShowCaseBuilder{
+        this.allowAnimation=allow
         return this
     }
 

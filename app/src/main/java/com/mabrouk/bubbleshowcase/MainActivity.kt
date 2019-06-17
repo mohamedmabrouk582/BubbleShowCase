@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             "fonts/opensans_regular.ttf"
         )
         var models:MutableList<ShowCaseModel> = ArrayList()
-        models.add(ShowCaseModel(textView,"text View ","ducucducud","textViewone",R.color.colorGreen,R.drawable.next_btn,textColor = R.color.white,titleFont = titleFont,contentFont = contentFont))
+        models.add(ShowCaseModel(textView,"text View ","ducucducud","textViewone",R.color.colorGreen,R.drawable.next_btn,textColor = R.color.white,titleFont = titleFont,contentFont = contentFont,allowTargetAnimation = false))
         models.add(ShowCaseModel(button,"button one ","ducucducud","buttonOne",R.color.colorOrange,R.drawable.next_btn,titleFont = titleFont,contentFont = contentFont))
         models.add(ShowCaseModel(textView2,"text View 2 ","ducucducud","textView2",R.color.colorRed,R.drawable.next_btn,titleFont = titleFont,contentFont = contentFont,scrollHere = true))
         models.add(ShowCaseModel(button3,"Button 3 ","ducucducud","button3",R.color.colorPink,R.drawable.next_btn,titleFont = titleFont,contentFont = contentFont))

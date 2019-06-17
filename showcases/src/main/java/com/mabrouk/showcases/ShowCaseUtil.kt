@@ -54,6 +54,7 @@ class ShowCaseUtil {
                     .nextButtonColorResourceId(R.color.white)
                     .nextButtonTextSize(10f)
                     .showOnce(it.key)
+                    .allowTargetAnimation(it.allowTargetAnimation)
                     .disableCloseAction(!showClose)
                     .highlightMode(BubbleShowCase.HighlightMode.VIEW_SURFACE)
                     .listener(listener).targetView(it.view)

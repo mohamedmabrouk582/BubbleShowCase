@@ -90,6 +90,7 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
     private val skipResourceId:Int?=builder.skipResourceId
     private val showSkip:Boolean?=builder.showSkip
     private val scrollHere:Boolean=builder.scrollHere
+    private val allowAnimation:Boolean=builder.allowAnimation
 
     //Sequence params
     private val mSequenceListener: SequenceShowCaseListener?  = builder.mSequenceShowCaseListener
@@ -276,7 +277,8 @@ class BubbleShowCase(builder: BubbleShowCaseBuilder){
 
         val targetViewParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
         targetViewParams.setMargins(getXposition(targetView), getYposition(targetView), getScreenWidth(mActivity.get()!!) - (getXposition(targetView) + targetView.width), 0)
-        backgroundDimLayout?.addView(AnimationUtils.setBouncingAnimation(targetScreenshotView, 0, DURATION_BEATING_ANIMATION), targetViewParams)
+        backgroundDimLayout?.addView(if (allowAnimation) AnimationUtils.setBouncingAnimation(targetScreenshotView, 0, DURATION_BEATING_ANIMATION) else targetScreenshotView, targetViewParams)
+       // backgroundDimLayout?.addView(AnimationUtils.setBouncingAnimation(targetScreenshotView, 0, DURATION_BEATING_ANIMATION), targetViewParams)
     }
 
     /**
